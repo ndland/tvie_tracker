@@ -1,16 +1,14 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import MediaCard, { IMedia } from './Media';
+import Media, { IMedia } from './Media';
 import { mockMediaProps } from './Media.mocks';
 
 export default {
   title: 'cards/media',
-  component: MediaCard,
+  component: Media,
   argTypes: {},
-} as ComponentMeta<typeof MediaCard>;
+} as ComponentMeta<typeof Media>;
 
-const Template: ComponentStory<typeof MediaCard> = (args) => (
-  <MediaCard {...args} />
-);
+const Template: ComponentStory<typeof Media> = (args) => <Media {...args} />;
 
 export const Base = Template.bind({});
 
