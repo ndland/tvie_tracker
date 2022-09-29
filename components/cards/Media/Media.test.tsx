@@ -31,11 +31,41 @@ describe('Media Card', () => {
     expect(thumbsUpIcon).toHaveClass('hover:stroke-green-400');
   });
 
+  it('fills the thumbs up icon green when it is clicked', async () => {
+    const thumbsUpIcon = screen.getByLabelText(/thumbs up/i);
+    userEvent.click(thumbsUpIcon);
+
+    await waitFor(() => {
+      expect(thumbsUpIcon).toHaveClass('fill-green-400');
+    });
+
+    userEvent.click(thumbsUpIcon);
+
+    await waitFor(() => {
+      expect(thumbsUpIcon).not.toHaveClass('fill-green-400');
+    });
+  });
+
   it('contains a thumbs down icon for liking a movie/tv show', () => {
     const thumbsDownIcon = screen.getByLabelText(/thumbs down/i);
     expect(thumbsDownIcon).toBeInTheDocument();
 
     userEvent.hover(thumbsDownIcon);
     expect(thumbsDownIcon).toHaveClass('hover:stroke-red-400');
+  });
+
+  it('fills the thumbs down icon red when it is clicked', async () => {
+    const thumbsDownIcon = screen.getByLabelText(/thumbs down/i);
+    userEvent.click(thumbsDownIcon);
+
+    await waitFor(() => {
+      expect(thumbsDownIcon).toHaveClass('fill-red-400');
+    });
+
+    userEvent.click(thumbsDownIcon);
+
+    await waitFor(() => {
+      expect(thumbsDownIcon).not.toHaveClass('fill-red-400');
+    });
   });
 });
