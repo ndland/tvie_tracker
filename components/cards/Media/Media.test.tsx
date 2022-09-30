@@ -1,11 +1,11 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { exampleMovie, mockMediaProps } from './Media.mocks';
-import { Base } from './Media.stories';
+import { Default } from './Media.stories';
 
 describe('Media Card', () => {
   beforeEach(() => {
-    render(<Base {...mockMediaProps.base} />);
+    render(<Default {...mockMediaProps.base} />);
   });
 
   it('should render correctly', () => {
