@@ -9,7 +9,7 @@ describe('Media Card', () => {
   });
 
   it('should render correctly', () => {
-    expect(screen.getByText(exampleMovie.title)).toBeInTheDocument();
+    expect(screen.getByText(/bullet train \(2022\)/i)).toBeInTheDocument();
   });
 
   it('should display a picture of the movie', async () => {

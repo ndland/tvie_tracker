@@ -8,9 +8,10 @@ import { useState } from 'react';
 export interface IMedia {
   mediaName: string;
   imageSrc: string;
+  release_date: string;
 }
 
-const Media: React.FC<IMedia> = ({ mediaName, imageSrc }) => {
+const Media: React.FC<IMedia> = ({ mediaName, imageSrc, release_date }) => {
   const [thumbsUpClicked, setThumbsClicked] = useState(false);
   const [thumbsDownClicked, setThumbsDownClicked] = useState(false);
 
@@ -26,7 +27,9 @@ const Media: React.FC<IMedia> = ({ mediaName, imageSrc }) => {
     <div className="w-1/4 bg-slate-200 rounded-md">
       <div className="text-center">
         <div className="text-3xl font-extrabold ">
-          <div className="py-2">{mediaName}</div>
+          <div className="py-2">
+            {mediaName} ({new Date(release_date).getFullYear()})
+          </div>
         </div>
         <div className="h-96 w-full relative">
           <Image
