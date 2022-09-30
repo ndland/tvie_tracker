@@ -6,6 +6,8 @@ module.exports = {
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
+    '!**/*mock*.ts',
+    '!**/*stories*.tsx',
     '!**/node_modules/**',
     '!<rootDir>/out/**',
     '!<rootDir>/.next/**',
@@ -40,5 +42,7 @@ module.exports = {
     '/node_modules/',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
+  testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  preset: 'ts-jest',
 };
