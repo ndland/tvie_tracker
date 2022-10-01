@@ -29,3 +29,9 @@ Default.play = async ({ canvasElement }) => {
   await userEvent.click(thumbsDown);
   await expect(thumbsDown).toHaveClass('fill-red-400 stroke-red-400');
 };
+
+export const EmptyResponse = Template.bind({});
+
+EmptyResponse.args = {
+  ...mockMediaProps.empty,
+} as IMedia;

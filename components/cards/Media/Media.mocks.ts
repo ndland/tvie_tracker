@@ -22,9 +22,16 @@ export const exampleMovie = {
 const base: IMedia = {
   mediaName: exampleMovie.title,
   imageSrc: `https://image.tmdb.org/t/p/original${exampleMovie.poster_path}`,
-  release_date: exampleMovie.release_date
+  release_date: exampleMovie.release_date,
+};
+
+const empty: IMedia = {
+  mediaName: '',
+  imageSrc: '',
+  release_date: '',
 };
 
 export const mockMediaProps = {
   base,
+  empty,
 };

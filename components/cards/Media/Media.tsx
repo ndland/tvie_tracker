@@ -28,16 +28,21 @@ const Media: React.FC<IMedia> = ({ mediaName, imageSrc, release_date }) => {
       <div className="text-center">
         <div className="text-3xl font-extrabold ">
           <div className="py-2">
-            {mediaName} ({new Date(release_date).getFullYear()})
+            {mediaName}
+            {release_date ? ` (${new Date(release_date).getFullYear()})` : ''}
           </div>
         </div>
         <div className="h-96 w-full relative">
-          <Image
-            className="rounded-md"
-            src={imageSrc}
-            alt="Movie Poster"
-            layout="fill"
-          />
+          {imageSrc || imageSrc != '' ? (
+            <Image
+              className="rounded-md"
+              src={imageSrc}
+              alt={`${mediaName} Poster`}
+              layout="fill"
+            />
+          ) : (
+            <div>Media Poster</div>
+          )}
         </div>
         <div className="flex h-12 space-x-2 items-center justify-center">
           <div>Like</div>
