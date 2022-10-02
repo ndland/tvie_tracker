@@ -24,19 +24,19 @@ const Media: React.FC<IMedia> = ({ mediaName, imageSrc, release_date }) => {
   };
 
   return (
-    <div className="w-1/4 bg-slate-200 rounded-md">
+    <div className="bg-slate-200 rounded-md">
       <div className="text-center">
-        <div className="text-3xl font-extrabold ">
+        <div className="h-12 text-2xl font-bold">
           <div className="py-2">
             {mediaName}
             {release_date ? ` (${new Date(release_date).getFullYear()})` : ''}
           </div>
         </div>
-        <div className="h-96 w-full relative">
+        <div className="h-80 w-full relative">
           {imageSrc || imageSrc != '' ? (
             <Image
               className="rounded-md"
-              src={imageSrc}
+              src={`${process.env.NEXT_PUBLIC_TVDB_IMAGE_URL}${imageSrc}`}
               alt={`${mediaName} Poster`}
               layout="fill"
             />

@@ -21,7 +21,7 @@ export const exampleMovie = {
 
 const base: IMedia = {
   mediaName: exampleMovie.title,
-  imageSrc: `https://image.tmdb.org/t/p/original${exampleMovie.poster_path}`,
+  imageSrc: exampleMovie.poster_path,
   release_date: exampleMovie.release_date,
 };
 
