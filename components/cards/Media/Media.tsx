@@ -12,15 +12,15 @@ export interface IMedia {
 }
 
 const Media: React.FC<IMedia> = ({ mediaName, imageSrc, release_date }) => {
-  const [thumbsUpClicked, setThumbsClicked] = useState(false);
-  const [thumbsDownClicked, setThumbsDownClicked] = useState(false);
+  const [like, setLike] = useState(false);
+  const [dislike, setDislike] = useState(false);
 
   const toggleThumbsUpClass = () => {
-    setThumbsClicked(!thumbsUpClicked);
+    setLike(!like);
   };
 
   const toggleThumbsDownClasss = () => {
-    setThumbsDownClicked(!thumbsDownClicked);
+    setDislike(!dislike);
   };
 
   return (
@@ -48,7 +48,7 @@ const Media: React.FC<IMedia> = ({ mediaName, imageSrc, release_date }) => {
           <div>Like</div>
           <HandThumbUpIcon
             className={`w-6 h-6 ${
-              thumbsUpClicked
+              like
                 ? 'fill-green-400 stroke-green-400'
                 : 'hover:stroke-green-400'
             }`}
@@ -57,7 +57,7 @@ const Media: React.FC<IMedia> = ({ mediaName, imageSrc, release_date }) => {
           />
           <HandThumbDownIcon
             className={`w-6 h-6 ${
-              thumbsDownClicked
+              dislike
                 ? 'fill-red-400 stroke-red-400'
                 : 'hover:stroke-red-400'
             }`}
