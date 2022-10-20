@@ -21,7 +21,6 @@ describe('Index Page', () => {
     });
   });
 
-  // TODO: Implement msw mocks to get this to pass.
   it('renders multiple <MediaCard> on the page', async () => {
     expect(await screen.findAllByRole('img')).toHaveLength(2);
   });
