@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NODE_ENV: development
+      NEXT_PUBLIC_TVDB_BASE_URL: https://api.themoviedb.org/3
+      NEXT_PUBLIC_TVDB_IMAGE_URL: https://image.tmdb.org/t/p/original
+      NEXT_PUBLIC_API_MOCKING: enabled
 
     strategy:
       matrix:
