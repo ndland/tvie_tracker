@@ -3,6 +3,9 @@
 
 name: Node.js CI
 
+env:
+  NEXT_PUBLIC_API_MOCKING: true
+
 on:
   push:
     branches:
