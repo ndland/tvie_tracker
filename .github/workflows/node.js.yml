@@ -19,7 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NODE_ENV: test
+      NODE_ENV: development
 
     strategy:
       matrix:
