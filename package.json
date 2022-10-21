@@ -16,7 +16,7 @@
     "prettier": "prettier --write .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "test:watch": "jest --watch"
   },
   "dependencies": {
