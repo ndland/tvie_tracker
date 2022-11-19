@@ -11,7 +11,7 @@ export default {
 } as ComponentMeta<typeof Media>;
 
 const Template: ComponentStory<typeof Media> = (args) => (
-  <div className="w-1/4">
+  <div>
     <Media {...args} />
   </div>
 );

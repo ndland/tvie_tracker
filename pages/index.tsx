@@ -32,7 +32,7 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <section>
-      <div className="grid grid-cols-5 gap-4 m-4">
+      <div className="flex flex-wrap min-w-full justify-center p-4 gap-4 md:gap-6">
         {trendingMedia.map((media: Media, i: number) => {
           return (
             <MediaCard
@@ -40,6 +40,7 @@ const Home: NextPageWithLayout = () => {
               mediaName={media.title}
               imageSrc={media.poster_path}
               release_date={media.release_date}
+              className="w-72 md:w-56"
             />
           );
         })}
