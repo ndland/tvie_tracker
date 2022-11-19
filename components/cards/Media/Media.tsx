@@ -29,8 +29,6 @@ const Media: React.FC<IMedia> = ({
     setDislike(!dislike);
   };
 
-  console.log(`className: ${className.concat(' bg-slate-200 rounded-md')}`);
-
   return (
     <div className={className.concat(' bg-slate-200 rounded-md')}>
       <div className="text-center">

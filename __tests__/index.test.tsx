@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import axios from 'axios';
 import { act } from 'react-dom/test-utils';
-import Home from '.';
+import Home from '../pages';
 
 let axiosSpy = axios as jest.Mocked<typeof axios>;
 
