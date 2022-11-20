@@ -23,14 +23,14 @@ const base: IMedia = {
   mediaName: exampleMovie.title,
   imageSrc: exampleMovie.poster_path,
   release_date: exampleMovie.release_date,
-  className: 'w-52',
+  className: 'w-56',
 };
 
 const empty: IMedia = {
   mediaName: '',
   imageSrc: '',
   release_date: '',
-  className: 'w-52',
+  className: '',
 };
 
 export const mockMediaProps = {
