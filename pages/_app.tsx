@@ -2,6 +2,10 @@ import type { AppProps } from 'next/app';
 import './globals.css';
 import { NextPageWithLayout } from './page';
 
+if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+  require('../mocks');
+}
+
 interface AppPropsWithLayout extends AppProps {
   Component: NextPageWithLayout;
 }

@@ -16,11 +16,15 @@
     "prettier": "prettier --write .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "test:watch": "jest --watch"
+  },
+  "browser": {
+    "./.msw": false
   },
   "dependencies": {
     "@heroicons/react": "^2.0.11",
+    "axios": "^0.27.2",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -54,6 +58,7 @@
     "husky": "^8.0.1",
     "jest": "^29.0.3",
     "jest-environment-jsdom": "^29.0.3",
+    "msw": "^0.47.4",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "storybook-css-modules-preset": "^1.1.1",
@@ -64,5 +69,8 @@
   },
   "resolutions": {
     "webpack": "^5"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

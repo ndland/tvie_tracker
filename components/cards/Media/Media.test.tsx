@@ -77,11 +77,11 @@ describe('Media Card', () => {
     });
 
     it("Doesn't bomb out when the data doesn't get returned", async () => {
-      await expect(screen.getByText(/media poster/i)).toBeInTheDocument();
+      expect(screen.getByText(/media poster/i)).toBeInTheDocument();
     });
 
     it(`Doesn't display 'NaN' when a year doesn't come back in the response`, async () => {
-      await expect(screen.queryByText(/NaN/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/NaN/i)).not.toBeInTheDocument();
     });
   });
 });

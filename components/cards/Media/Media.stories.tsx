@@ -10,7 +10,11 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof Media>;
 
-const Template: ComponentStory<typeof Media> = (args) => <Media {...args} />;
+const Template: ComponentStory<typeof Media> = (args) => (
+  <div>
+    <Media {...args} />
+  </div>
+);
 
 export const Default = Template.bind({});
 
