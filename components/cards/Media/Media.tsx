@@ -43,7 +43,7 @@ const Media: React.FC<IMedia> = ({
           width={imageWidth || 185}
           height={Math.round(imageHeight) || 278}
         />
-        <div className="absolute top-0 left-0 right-0 bg-black text-center text-2xl text-white opacity-0 duration-500 group-hover:bg-opacity-40 group-hover:opacity-100">
+        <div className="absolute top-0 left-0 right-0 rounded-t-md bg-black text-center text-2xl text-white opacity-0 duration-500 group-hover:bg-opacity-40 group-hover:opacity-100">
           {mediaName} ({new Date(release_date).getFullYear()})
         </div>
       </div>
