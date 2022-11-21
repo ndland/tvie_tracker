@@ -3,10 +3,9 @@ import axios from 'axios';
 import { act } from 'react-dom/test-utils';
 import Home from '../pages';
 
-let axiosSpy = axios as jest.Mocked<typeof axios>;
+let axiosSpy: jest.SpyInstance;
 
 describe('Index Page', () => {
-  console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
   beforeEach(() => {
     axiosSpy = jest.spyOn(axios, 'get');
 
