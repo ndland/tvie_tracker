@@ -25,13 +25,6 @@ const base: IMedia = {
   release_date: exampleMovie.release_date,
 };
 
-const empty: IMedia = {
-  mediaName: '',
-  imageSrc: '',
-  release_date: '',
-};
-
 export const mockMediaProps = {
   base,
-  empty,
 };

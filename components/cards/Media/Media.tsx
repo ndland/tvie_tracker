@@ -28,16 +28,12 @@ const Media: React.FC<IMedia> = ({ mediaName, imageSrc, release_date }) => {
       <div
         className={'group relative h-[278px] w-full rounded-md bg-slate-200'}
       >
-        {imageSrc || imageSrc != '' ? (
-          <Image
-            className="rounded-md"
-            src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_URL}${imageSrc}`}
-            alt={`${mediaName} Poster`}
-            layout="fill"
-          />
-        ) : (
-          <div>Media Poster</div>
-        )}
+        <Image
+          className="rounded-md"
+          src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_URL}${imageSrc}`}
+          alt={`${mediaName} Poster`}
+          layout="fill"
+        />
         <div className="absolute top-0 left-0 right-0 bg-black text-center text-2xl text-white opacity-0 duration-500 group-hover:bg-opacity-40 group-hover:opacity-100">
           {mediaName} ({new Date(release_date).getFullYear()})
         </div>

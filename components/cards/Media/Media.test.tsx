@@ -70,18 +70,4 @@ describe('Media Card', () => {
       });
     });
   });
-
-  describe('Not Happy Path', () => {
-    beforeEach(() => {
-      render(<Default {...mockMediaProps.empty} />);
-    });
-
-    it("Doesn't bomb out when the data doesn't get returned", async () => {
-      expect(screen.getByText(/media poster/i)).toBeInTheDocument();
-    });
-
-    it(`Doesn't display 'NaN' when a year doesn't come back in the response`, async () => {
-      expect(screen.queryByText(/NaN/i)).not.toBeInTheDocument();
-    });
-  });
 });
