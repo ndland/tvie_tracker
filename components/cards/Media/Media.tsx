@@ -22,8 +22,8 @@ const Media: React.FC<IMedia> = ({
   const [dislike, setDislike] = useState(false);
   const url = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_URL}/${size}${imageSrc}`;
   const regex: RegExp = /\d+/;
-  const imageWidth = size.match(regex)[0] as string | null;
-  const imageHeight: number = imageWidth / (2 / 3);
+  const imageWidth: number | null = +size.match(regex)![0];
+  const imageHeight: number = +imageWidth / (2 / 3);
 
   const toggleThumbsUpClass = () => {
     setLike(!like);
@@ -41,7 +41,7 @@ const Media: React.FC<IMedia> = ({
           src={url}
           alt={`${mediaName} Poster`}
           width={imageWidth || 185}
-          height={Math.round(imageHeight)}
+          height={Math.round(imageHeight) || 278}
         />
         <div className="absolute top-0 left-0 right-0 bg-black text-center text-2xl text-white opacity-0 duration-500 group-hover:bg-opacity-40 group-hover:opacity-100">
           {mediaName} ({new Date(release_date).getFullYear()})
