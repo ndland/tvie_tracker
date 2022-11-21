@@ -45,6 +45,7 @@ module.exports = {
         'style',
         'test',
         'translation',
+        'types'
       ],
     ],
   },
