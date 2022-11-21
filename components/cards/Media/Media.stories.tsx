@@ -10,11 +10,13 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof Media>;
 
-const Template: ComponentStory<typeof Media> = (args) => (
-  <div>
-    <Media {...args} />
-  </div>
-);
+const Template: ComponentStory<typeof Media> = (args: IMedia) => {
+  return (
+    <div>
+      <Media {...args} />
+    </div>
+  );
+};
 
 export const Default = Template.bind({});
 
@@ -34,8 +36,8 @@ Default.play = async ({ canvasElement }) => {
   await expect(thumbsDown).toHaveClass('fill-red-400 stroke-red-400');
 };
 
-export const EmptyResponse = Template.bind({});
+export const LargerImage = Template.bind({});
 
-EmptyResponse.args = {
-  ...mockMediaProps.empty,
+LargerImage.args = {
+  ...mockMediaProps.largerImage,
 } as IMedia;

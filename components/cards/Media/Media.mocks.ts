@@ -23,17 +23,17 @@ const base: IMedia = {
   mediaName: exampleMovie.title,
   imageSrc: exampleMovie.poster_path,
   release_date: exampleMovie.release_date,
-  className: 'w-56',
+  size: 'w185',
 };
 
-const empty: IMedia = {
-  mediaName: '',
-  imageSrc: '',
-  release_date: '',
-  className: '',
+const largerImage: IMedia = {
+  mediaName: exampleMovie.title,
+  imageSrc: exampleMovie.poster_path,
+  release_date: exampleMovie.release_date,
+  size: 'w342',
 };
 
 export const mockMediaProps = {
   base,
-  empty,
+  largerImage,
 };
