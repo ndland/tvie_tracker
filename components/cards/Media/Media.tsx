@@ -9,11 +9,21 @@ export interface IMedia {
   mediaName: string;
   imageSrc: string;
   release_date: string;
+  size: string;
 }
 
-const Media: React.FC<IMedia> = ({ mediaName, imageSrc, release_date }) => {
+const Media: React.FC<IMedia> = ({
+  mediaName,
+  imageSrc,
+  release_date,
+  size,
+}) => {
   const [like, setLike] = useState(false);
   const [dislike, setDislike] = useState(false);
+  const url = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_URL}/${size}${imageSrc}`;
+  const regex: RegExp = /\d+/;
+  const imageWidth = size.match(regex)[0] as string | null;
+  const imageHeight: number = imageWidth / (2 / 3);
 
   const toggleThumbsUpClass = () => {
     setLike(!like);
@@ -24,21 +34,20 @@ const Media: React.FC<IMedia> = ({ mediaName, imageSrc, release_date }) => {
   };
 
   return (
-    <div className="w-[185px] rounded-md bg-slate-400">
-      <div
-        className={'group relative h-[278px] w-full rounded-md bg-slate-200'}
-      >
+    <div className="max-w-fit rounded-md bg-slate-400">
+      <div className={'group relative max-h-fit leading-none'}>
         <Image
           className="rounded-md"
-          src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_URL}${imageSrc}`}
+          src={url}
           alt={`${mediaName} Poster`}
-          layout="fill"
+          width={imageWidth || 185}
+          height={Math.round(imageHeight)}
         />
         <div className="absolute top-0 left-0 right-0 bg-black text-center text-2xl text-white opacity-0 duration-500 group-hover:bg-opacity-40 group-hover:opacity-100">
           {mediaName} ({new Date(release_date).getFullYear()})
         </div>
       </div>
-      <div className="flex h-12 items-center justify-center space-x-2 text-white">
+      <div className="-mt-1 flex h-12 items-center justify-center space-x-2 text-white">
         <div>Like</div>
         <HandThumbUpIcon
           className={`h-6 w-6 ${

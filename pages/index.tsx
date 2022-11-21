@@ -40,6 +40,7 @@ const Home: NextPageWithLayout = () => {
               mediaName={media.title}
               imageSrc={media.poster_path}
               release_date={media.release_date}
+              size="w185"
             />
           );
         })}
